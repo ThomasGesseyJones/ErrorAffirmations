@@ -20,6 +20,7 @@ Installation
 Currently, the only way to install ``ErrorAffirmations`` is to clone the repository and install it manually:
 
 .. code:: bash
+
   git clone git@github.com:ThomasGesseyJones/ErrorAffirmations.git
   cd ErrorAffirmations
   pip install .
@@ -30,11 +31,13 @@ Usage
 Simply import the ``erroraffirmations`` module and all errors will be appended with an affirmation:
 
 .. code:: python
+
   import erroraffirmations
 
   raise Exception('Something went wrong')
 
-.. code:: bash
+.. code:: 
+
     Traceback (most recent call last):
       File "basic_usage.py", line 3, in <module>
         raise Exception('Something went wrong')
