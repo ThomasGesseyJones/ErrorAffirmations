@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "erroraffirmations"
+dynamic = ["version"]
+maintainers = [
+    { name="Thomas Gessey-Jones", email="thomasgesseyjones@gmail.com" },
+]
+authors = [
+    { name="Thomas Gessey-Jones", email="thomasgesseyjones@gmail.com" },
+]
+description = "Affirmative error messages for Python"
+readme = "README.rst"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Natural Language :: English",
+    "Topic :: Software Development :: Bug Tracking"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ThomasGesseyJones/ErrorAffirmations"
+"Bug Tracker" = "https://github.com/ThomasGesseyJones/ErrorAffirmations/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "erroraffirmations._version.__version__"}
