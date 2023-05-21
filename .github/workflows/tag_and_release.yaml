@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          python-version: '3.10' 
       - uses: actions/setup-python@v4
       - name: Get Version
         id: tag-version
-        run:  echo "::set-output name=tag_version::$(python3 ./bin/get_version.py)"
+        run: echo "tag_version=$(python3 ./bin/get_version.py)" >> $GITHUB_OUTPUT
       - name: Create Tag
         uses: actions/github-script@v3
         env:
