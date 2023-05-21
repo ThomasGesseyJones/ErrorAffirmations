@@ -1,0 +1,30 @@
+name: Tag_And_Release
+
+on:
+  pull_request:
+    branches: [main]
+    types:
+      - closed
+
+jobs:
+  tagging:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - name: Get Version
+        id: tag-version
+        run:  echo "::set-output name=tag_version::$(python3 ./bin/get_version.py)"
+      - name: Create Tag
+        uses: actions/github-script@v3
+        env:
+          TAG: ${{ steps.set-tag.outputs.tag_version }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+           github.git.createRef({
+             owner: context.repo.owner,
+             repo: context.repo.repo,
+             ref: "refs/tags/v${{ steps.set-tag.outputs.tag_version }}",
+             sha: context.sha})
