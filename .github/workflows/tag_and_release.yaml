@@ -3,8 +3,8 @@ name: Tag_And_Release
 on:
   pull_request:
     branches: [main]
-    types:
-      - closed
+#    types:
+#      - closed
 
 jobs:
   tagging:
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v4
       - name: Get Version
         id: tag-version
-        run:  echo "::set-output name=tag_version::$(python3 ./bin/get_version.py)"
+        run: echo "tag_version=$(python3 ./bin/get_version.py)" >> $GITHUB_OUTPUT
       - name: Create Tag
         uses: actions/github-script@v3
         env:
