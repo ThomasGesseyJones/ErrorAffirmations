@@ -98,7 +98,8 @@ def main():
 
     # Check versions match
     elif version.parse(current_version) != version.parse(readme_version):
-        sys.stderr.write("Version mismatch: {} != {}".format(version_file, readme_version))
+        sys.stderr.write("Version mismatch between {} and {}: {} != {}".format(version_file, readme_file,
+                                                                               current_version, readme_version))
         sys.exit(1)
 
 
