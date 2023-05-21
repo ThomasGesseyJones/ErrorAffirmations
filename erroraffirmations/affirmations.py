@@ -1,4 +1,4 @@
-""" Affirmations
+"""Affirmations.
 
 This module adds affirmations to the end of Python error messages, so that
 you feel better about your errors.
@@ -24,7 +24,7 @@ affirmations = [
 
 # Function to select a random affirmation from the list.
 def get_random_affirmation() -> str:
-    """ Returns a random affirmation from the list of affirmations.
+    """Return a random affirmation from the list of affirmations.
 
     Returns
     -------
@@ -40,7 +40,7 @@ sys.base_excepthook = sys.excepthook
 
 
 def affirming_excepthook(*args):
-    """ Prints an affirmation after the standard error message. """
+    """Print an affirmation after the standard error message."""
     sys.base_excepthook(*args)
     sys.stderr.write(f'\n{get_random_affirmation()}\n')
 

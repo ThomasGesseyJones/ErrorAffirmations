@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-""" Check Version
+"""Check Version.
 
 Verify version has been incremented and matches between README and _version
 file.
@@ -21,27 +21,26 @@ readme_file = "README.rst"
 
 # Utility functions
 def run_on_commandline(*args):
-    """ Run the given arguments as a command on the command line """
+    """Run the given arguments as a command on the command line."""
     return subprocess.run(args, text=True, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE).stdout
 
 
 def unit_incremented(version_a: str, version_b: str) -> bool:
-    """ Check if version_a is one version larger than version_b
+    """Check if version_a is one version larger than version_b.
 
     Parameters
-    ==========
+    ----------
     version_a: str
         New version, version number
     version_b: str
         Old version, version number
 
     Returns
-    =======
+    -------
     unit_incremented: bool
         Whether, version number has been unit incremented
     """
-
     # Convert to version objects
     version_a = version.parse(version_a)
     version_b = version.parse(version_b)
@@ -81,6 +80,7 @@ def unit_incremented(version_a: str, version_b: str) -> bool:
 
 
 def main():
+    """Check version is consistent and incremented correctly."""
     # Get current version from version file
     current_version = run_on_commandline("cat", version_file)
     current_version = current_version.split("=")[-1].strip().strip("'")
