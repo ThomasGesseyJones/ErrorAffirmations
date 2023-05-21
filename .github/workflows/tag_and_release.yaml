@@ -19,15 +19,19 @@ jobs:
       - name: Get Version
         id: tag-version
         run: echo "tag_version=$(python3 ./bin/get_version.py)" >> $GITHUB_OUTPUT
+      - name: Print Version
+        env:
+          TAG: ${{ steps.tag-version.outputs.tag_version }}
+        run: echo "${{ steps.tag-version.outputs.tag_version }}"
       - name: Create Tag
         uses: actions/github-script@v3
         env:
-          TAG: ${{ steps.set-tag.outputs.tag_version }}
+          TAG: ${{ steps.tag-version.outputs.tag_version }}
         with:
           github-token: ${{ github.token }}
           script: |
            github.git.createRef({
              owner: context.repo.owner,
              repo: context.repo.repo,
-             ref: "refs/tags/v${steps.set-tag.outputs.tag_version}",
+             ref: "refs/tags/v${{ steps.tag-version.outputs.tag_version }}",
              sha: context.sha})
