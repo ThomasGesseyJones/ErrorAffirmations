@@ -1,19 +1,24 @@
 """ Affirmations
 
-This module adds affirmations to the end of Python error messages, so that you feel better about your errors.
+This module adds affirmations to the end of Python error messages, so that
+you feel better about your errors.
 """
 
 import sys
 import random
 
 
-# List of affirmations to choose from, users can edit this list to add their own or remove ones they don't like.
+# List of affirmations to choose from, users can edit this list to add their
+# own or remove ones they don't like.
 affirmations = [
     "You only learn by making mistakes.",
-    "At least you know that there is a problem, an invisible error is the worst kind.",
+    "At least you know that there is a problem, an invisible error is the "
+    "worst kind.",
     "Keep trying, we are sure your code will be perfect soon.",
-    "Why not have a quick break? You deserve it, and it might help you solve this error.",
-    "Thank you for using ErrorAffirmations, you have our full support in debugging this difficult error.",
+    "Why not have a quick break? You deserve it, and it might help you "
+    "solve this error.",
+    "Thank you for using ErrorAffirmations, you have our full support in "
+    "debugging this difficult error.",
 ]
 
 
@@ -29,7 +34,8 @@ def get_random_affirmation() -> str:
     return random.choice(affirmations)
 
 
-# Code to replace the default Python excepthook with one that prints an affirmation after the error message.
+# Code to replace the default Python excepthook with one that prints an
+# affirmation after the error message.
 sys.base_excepthook = sys.excepthook
 
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 """ Check Version
 
-Verify version has been incremented and matches between README and _version file.
+Verify version has been incremented and matches between README and _version
+file.
 
 Based on check_version.py from the anesthetic GitHub repository:
 https://github.com/handley-lab/anesthetic
@@ -21,7 +22,9 @@ readme_file = "README.rst"
 # Utility functions
 def run_on_commandline(*args):
     """ Run the given arguments as a command on the command line """
-    return subprocess.run(args, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout
+    return subprocess.run(args, text=True, stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE).stdout
+
 
 def unit_incremented(version_a: str, version_b: str) -> bool:
     """ Check if version_a is one version larger than version_b
@@ -51,12 +54,14 @@ def unit_incremented(version_a: str, version_b: str) -> bool:
                     (version_a.base_version == version_b.base_version))
         # Differing pre-release levels
         else:
-            return (version_a.pre[1] == 0 and version_a.pre[0] > version_b.pre[0]
-                    and version_a.base_version == version_b.base_version)
+            return (version_a.pre[1] == 0 and
+                    version_a.pre[0] > version_b.pre[0] and
+                    version_a.base_version == version_b.base_version)
 
     # New pre-release level
     elif version_a.pre is not None:
-        return version_a.base_version > version_b.base_version and version_a.pre[1] == 0
+        return (version_a.base_version > version_b.base_version and
+                version_a.pre[1] == 0)
 
     # Full release
     elif version_b.pre is not None:
@@ -82,7 +87,9 @@ def main():
 
     # Get previous version from main branch of code
     run_on_commandline("git", "fetch", "origin", "main")
-    previous_version = run_on_commandline("git", "show", "remotes/origin/main:" + version_file)
+    previous_version = run_on_commandline("git", "show",
+                                          "remotes/origin/main:" +
+                                          version_file)
     previous_version = previous_version.split("=")[-1].strip().strip("'")
 
     # Get readme version
@@ -93,15 +100,17 @@ def main():
     if not unit_incremented(current_version, previous_version):
         sys.stderr.write(("Version must be incremented by one:\n"
                           "HEAD:   {},\n"
-                          "master: {}.\n").format(current_version, previous_version))
+                          "master: {}.\n").format(current_version,
+                                                  previous_version))
         sys.exit(1)
 
     # Check versions match
     elif version.parse(current_version) != version.parse(readme_version):
-        sys.stderr.write("Version mismatch between {} and {}: {} != {}".format(version_file, readme_file,
-                                                                               current_version, readme_version))
+        sys.stderr.write("Version mismatch between {} "
+                         "and {}: {} != {}".format(version_file, readme_file,
+                                                   current_version,
+                                                   readme_version))
         sys.exit(1)
-
 
     # No issues found, exit happily :)
     sys.exit(0)
