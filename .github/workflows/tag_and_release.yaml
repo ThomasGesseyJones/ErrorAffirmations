@@ -7,7 +7,7 @@ on:
       - closed
 
 jobs:
-  tagging:
+  tagging_release:
     permissions: write-all
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
@@ -35,3 +35,10 @@ jobs:
              repo: context.repo.repo,
              ref: "refs/tags/v${{ steps.tag-version.outputs.tag_version }}",
              sha: context.sha})
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          name: "{{  steps.tag-version.outputs.tag_version }}"
+          tag: "v${{ steps.tag-version.outputs.tag_version }}"
+          generateReleaseNotes: true
+          token: ${{ secrets.GITHUB_TOKEN }}
