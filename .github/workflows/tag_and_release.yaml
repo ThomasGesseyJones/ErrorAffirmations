@@ -3,8 +3,8 @@ name: Tag_And_Release
 on:
   pull_request:
     branches: [main]
-#    types:
-#      - closed
+    types:
+      - closed
 
 jobs:
   tagging:
