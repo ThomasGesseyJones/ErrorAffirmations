@@ -38,7 +38,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          name: "{{  steps.tag-version.outputs.tag_version }}"
+          name: "${{  steps.tag-version.outputs.tag_version }}"
           tag: "v${{ steps.tag-version.outputs.tag_version }}"
           generateReleaseNotes: true
           token: ${{ secrets.GITHUB_TOKEN }}
