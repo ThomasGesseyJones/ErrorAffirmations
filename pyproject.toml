@@ -27,5 +27,8 @@ classifiers = [
 "Homepage" = "https://github.com/ThomasGesseyJones/ErrorAffirmations"
 "Bug Tracker" = "https://github.com/ThomasGesseyJones/ErrorAffirmations/issues"
 
+[project.optional-dependencies]
+test = ["packaging"]
+
 [tool.setuptools.dynamic]
 version = {attr = "erroraffirmations._version.__version__"}
