@@ -1,9 +1,10 @@
-""" This is an example of how to use ErrorAffirmations to add your own affirmations to the list """
+""" This is an example of how to use ErrorAffirmations to add your own
+affirmations to the list """
 from erroraffirmations import add_affirmation, get_affirmations, \
     clear_affirmations
 
-# Show current list of affirmations
-for affirmation in get_affirmations():
+# Show part of the current list of affirmations
+for affirmation in list(get_affirmations())[:5]:
     print(affirmation)
 print("\n")
 
