@@ -37,7 +37,7 @@ jobs:
              ref: "refs/tags/v${{ steps.tag-version.outputs.tag_version }}",
              sha: context.sha})
       - name: Create release if a full release
-        if: not contains(steps.tag-version.outputs.tag_version, '-')
+        if: "!contains(steps.tag-version.outputs.tag_version, '-')"
         uses: ncipollo/release-action@v1
         with:
           name: "${{  steps.tag-version.outputs.tag_version }}"
