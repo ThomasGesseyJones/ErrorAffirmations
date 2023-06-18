@@ -105,7 +105,14 @@ def affirming_excepthook(*args) -> None:
     *args: tuple
         Arguments passed to the standard sys excepthook
     """
+    # Start with normal error message
     sys.base_excepthook(*args)
+
+    # End there if no affirmations
+    if len(_affirmations) == 0:
+        return
+
+    # Otherwise, print a random affirmation
     sys.stderr.write(f'\n{get_random_affirmation()}\n')
 
 
