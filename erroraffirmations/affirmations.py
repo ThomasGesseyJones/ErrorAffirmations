@@ -90,6 +90,9 @@ def get_random_affirmation() -> str:
     return random.choice(list(_affirmations))
 
 
+# Load affirmations from default file
+load_affirmations_from_file(DEFAULT_FILE)
+
 # Core functionality to add affirmations to error messages. This is done by
 # replacing the default Python excepthook with one that prints an affirmation
 # after the error message.
