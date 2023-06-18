@@ -7,7 +7,7 @@ Introduction
 
 :ErrorAffirmations: Affirmative error messages for Python
 :Author: Thomas Gessey-Jones
-:Version: 0.0.10
+:Version: 0.1.0-beta.1
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
 
 ``ErrorAffirmations`` is a Python library that provides affirmative error messages, to help you feel better about your
