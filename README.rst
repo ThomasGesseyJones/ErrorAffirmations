@@ -7,7 +7,7 @@ Introduction
 
 :ErrorAffirmations: Affirmative error messages for Python
 :Author: Thomas Gessey-Jones
-:Version: 0.0.9
+:Version: 0.0.10
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
 
 ``ErrorAffirmations`` is a Python library that provides affirmative error messages, to help you feel better about your
@@ -43,28 +43,29 @@ Simply import the ``erroraffirmations`` module and all errors will be appended w
         raise Exception('Something went wrong')
     Exception: Something went wrong
 
-    At least you know that there is a problem, an invisible error is the worst kind.
+    Remember, every error you encounter is an opportunity for growth and learning. You're capable of overcoming this challenge!
 
 
 You can also access the affirmations list directly, to add your own affirmations:
 
 .. code:: python
 
-    from erroraffirmations.affirmations import affirmations
+    from erroraffirmations import add_affirmation, get_affirmations, \
+    clear_affirmations
 
-    # Show current list of affirmations
-    for affirmation in affirmations:
+    # Show part of the current list of affirmations
+    for affirmation in list(get_affirmations())[:5]:
         print(affirmation)
     print("\n")
 
     # Remove all existing affirmations
-    affirmations.clear()
+    clear_affirmations()
 
     # Add your own affirmations
-    affirmations.append("You are doing great!")
+    add_affirmation("You are doing great!")
 
     # Show new list of affirmations
-    print(affirmations)
+    print(get_affirmations())
     print("\n")
 
     # Let us see it in action
@@ -73,22 +74,25 @@ You can also access the affirmations list directly, to add your own affirmations
 
 .. code::
 
-    You only learn by making mistakes.
-    At least you know that there is a problem, an invisible error is the worst kind.
-    Keep trying, we are sure your code will be perfect soon.
-    Why not have a quick break? You deserve it, and it might help you solve this error.
-    Thank you for using ErrorAffirmations, you have our full support in debugging this difficult error.
+    The best programmers encounter errors regularly. It's a sign that you're exploring new territory and pushing your limits.
+    Mistakes are an essential part of the learning process. You're getting closer to the solution with each error you encounter.
+    The fact that you're facing this challenge head-on shows your determination and dedication. You've got this!
+    Take a moment to step back, breathe, and approach the problem from a different angle. A fresh perspective can lead to breakthroughs.
+    Remember, every error you encounter is an opportunity for growth and learning. You're capable of overcoming this challenge!
 
 
-    ['You are doing great!']
+    {'You are doing great!'}
 
 
     Traceback (most recent call last):
-      File "editing_affirmations.py", line 20, in <module>
+      File "/home/thomas/Documents/Pet_Projects/ErrorAffirmations/examples/editing_affirmations.py", line 22, in <module>
         raise ValueError("1 + 1 is not equal to 3")
     ValueError: 1 + 1 is not equal to 3
 
     You are doing great!
+
+    Process finished with exit code 1
+
 
 Code snippets demonstrating the usage of ``ErrorAffirmations`` can be found in the ``examples`` directory.
 
