@@ -7,14 +7,12 @@ you feel better about your errors.
 # Required libraries
 import sys
 import random
-import os
+from pkg_resources import resource_stream
 
 
 # Parameters
-DEFAULT_FILE = os.path.join(os.path.dirname(__file__),
-                            "data",
-                            "affirmations.txt")
-
+DEFAULT_FILE = resource_stream("erroraffirmations",
+                               "data/affirmations.txt")
 
 # Set of affirmations to choose from, users can edit this set to add their
 # own or remove ones they don't like using the functions below. This set
@@ -91,7 +89,7 @@ def get_random_affirmation() -> str:
 
 
 # Load affirmations from default file
-load_affirmations_from_file(DEFAULT_FILE)
+load_affirmations_from_file(DEFAULT_FILE.name)
 
 # Core functionality to add affirmations to error messages. This is done by
 # replacing the default Python excepthook with one that prints an affirmation
