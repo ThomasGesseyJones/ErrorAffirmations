@@ -94,6 +94,7 @@ load_affirmations_from_file(DEFAULT_FILE.name)
 # Option to turn off affirmations
 affirmations_enabled = True  # On by default (why else would you use this?)
 
+
 def disable_affirmations() -> None:
     """Disable affirmations."""
     global affirmations_enabled
