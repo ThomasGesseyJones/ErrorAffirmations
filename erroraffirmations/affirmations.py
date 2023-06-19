@@ -88,8 +88,11 @@ def get_random_affirmation() -> str:
     return random.choice(list(_affirmations))
 
 
+# Load default affirmations from default file
+load_affirmations_from_file(DEFAULT_FILE.name)
+
 # Option to turn off affirmations
-affirmations_enabled = True
+affirmations_enabled = True  # On by default (why else would you use this?)
 
 def disable_affirmations() -> None:
     """Disable affirmations."""
@@ -102,9 +105,6 @@ def enable_affirmations() -> None:
     global affirmations_enabled
     affirmations_enabled = True
 
-
-# Load affirmations from default file
-load_affirmations_from_file(DEFAULT_FILE.name)
 
 # Core functionality to add affirmations to error messages. This is done by
 # replacing the default Python excepthook with one that prints an affirmation
