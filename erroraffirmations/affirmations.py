@@ -88,6 +88,21 @@ def get_random_affirmation() -> str:
     return random.choice(list(_affirmations))
 
 
+# Option to turn off affirmations
+affirmations_enabled = True
+
+def disable_affirmations() -> None:
+    """Disable affirmations."""
+    global affirmations_enabled
+    affirmations_enabled = False
+
+
+def enable_affirmations() -> None:
+    """Enable affirmations."""
+    global affirmations_enabled
+    affirmations_enabled = True
+
+
 # Load affirmations from default file
 load_affirmations_from_file(DEFAULT_FILE.name)
 
@@ -108,8 +123,8 @@ def affirming_excepthook(*args) -> None:
     # Start with normal error message
     sys.base_excepthook(*args)
 
-    # End there if no affirmations
-    if len(_affirmations) == 0:
+    # End there are no affirmations, or affirmations are disabled
+    if (len(_affirmations) == 0) | (not affirmations_enabled):
         return
 
     # Otherwise, print a random affirmation
