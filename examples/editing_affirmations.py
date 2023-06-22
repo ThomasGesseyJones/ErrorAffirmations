@@ -1,5 +1,5 @@
-""" This is an example of how to use ErrorAffirmations to add your own
-affirmations to the list """
+"""Example of how to use ErrorAffirmations to add your own affirmations."""
+
 from erroraffirmations import add_affirmation, get_affirmations, \
     clear_affirmations
 
