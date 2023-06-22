@@ -28,7 +28,7 @@ classifiers = [
 "Bug Tracker" = "https://github.com/ThomasGesseyJones/ErrorAffirmations/issues"
 
 [project.optional-dependencies]
-test = ["packaging", "flake8", "pydocstyle"]
+test = ["packaging", "flake8", "pydocstyle", "pytest"]
 
 [tool.setuptools.dynamic]
 version = {attr = "erroraffirmations._version.__version__"}
