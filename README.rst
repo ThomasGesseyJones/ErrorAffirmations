@@ -10,10 +10,10 @@ Introduction
 :Version: 0.1.0-beta.7
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
 
-..image:: https://img.shields.io/badge/python-3.7+-blue.svg
+.. image:: https://img.shields.io/badge/python-3.7+-blue.svg
    :target: https://www.python.org/downloads/
    :alt: Python version
-..image:: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/version_checks.yaml/badge.svg
+.. image:: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/version_checks.yaml/badge.svg
    :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/version_checks.yaml
    :alt: Testing Status
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
