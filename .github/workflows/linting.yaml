@@ -17,6 +17,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install flake8 pydocstyle packaging
       - name: flake8 PEP compliance checks
-        run: python -m flake8 erroraffirmations bin
+        run: python -m flake8 erroraffirmations bin examples tests
       - name: pydocstyle documentation style checks
-        run: python -m pydocstyle --convention=numpy erroraffirmations bin
+        run: python -m pydocstyle --convention=numpy erroraffirmations bin examples tests
