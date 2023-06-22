@@ -13,8 +13,8 @@ Introduction
 .. image:: https://img.shields.io/badge/python-3.7+-blue.svg
    :target: https://www.python.org/downloads/
    :alt: Python version
-.. image:: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/version_checks.yaml/badge.svg
-   :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/version_checks.yaml
+.. image:: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/CI.yaml/badge.svg
+   :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/CI.yaml
    :alt: Testing Status
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
    :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE
