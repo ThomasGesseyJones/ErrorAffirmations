@@ -1,4 +1,5 @@
 """Example of ErrorAffirmations behaviour when there are no affirmations."""
+
 from erroraffirmations import clear_affirmations
 
 # Remove all existing affirmations
