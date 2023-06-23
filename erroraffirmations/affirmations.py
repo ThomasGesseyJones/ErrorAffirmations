@@ -88,8 +88,13 @@ def get_random_affirmation() -> str:
     return random.choice(list(_affirmations))
 
 
+def reset_affirmations() -> None:
+    """Reset affirmations to the defaults from the default file."""
+    load_affirmations_from_file(DEFAULT_FILE.name, append=False)
+
+
 # Load default affirmations from default file
-load_affirmations_from_file(DEFAULT_FILE.name)
+reset_affirmations()
 
 # Option to turn off affirmations
 _affirmations_enabled = True  # On by default (why else would you use this?)

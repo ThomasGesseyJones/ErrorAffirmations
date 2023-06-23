@@ -18,7 +18,7 @@ def test_adding_affirmations(exception):
         raise exception("Test exception")
 
     # Reset affirmations for other tests
-    ea.load_affirmations_from_file(ea.DEFAULT_FILE.name, append=False)
+    ea.reset_affirmations()
 
 
 @pytest.mark.parametrize("exception", [Exception, ValueError, TypeError,
@@ -30,4 +30,4 @@ def test_adding_no_affirmations(exception):
         raise exception("Test exception")
 
     # Reset affirmations for other tests
-    ea.load_affirmations_from_file(ea.DEFAULT_FILE.name, append=False)
+    ea.reset_affirmations()

@@ -65,7 +65,7 @@ def test_clear_affirmations():
     assert len(ea.get_affirmations()) == 0
 
     # Reset affirmations for other tests
-    ea.load_affirmations_from_file(ea.DEFAULT_FILE.name)
+    ea.reset_affirmations()
 
 
 def test_load_affirmations_from_file():
@@ -76,8 +76,8 @@ def test_load_affirmations_from_file():
     assert len(ea.get_affirmations()) == current_num_affirmations + 3
     assert "A test affirmation" in ea.get_affirmations()
 
-    # Test resetting affirmations by loading default with append=False
-    ea.load_affirmations_from_file(ea.DEFAULT_FILE.name, append=False)
+    # Test resetting affirmations
+    ea.reset_affirmations()
     assert len(ea.get_affirmations()) == current_num_affirmations
 
     # Test loading a file with append=False
