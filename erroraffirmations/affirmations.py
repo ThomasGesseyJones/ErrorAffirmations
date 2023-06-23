@@ -92,19 +92,30 @@ def get_random_affirmation() -> str:
 load_affirmations_from_file(DEFAULT_FILE.name)
 
 # Option to turn off affirmations
-affirmations_enabled = True  # On by default (why else would you use this?)
+_affirmations_enabled = True  # On by default (why else would you use this?)
 
 
 def disable_affirmations() -> None:
     """Disable affirmations."""
-    global affirmations_enabled
-    affirmations_enabled = False
+    global _affirmations_enabled
+    _affirmations_enabled = False
 
 
 def enable_affirmations() -> None:
     """Enable affirmations."""
-    global affirmations_enabled
-    affirmations_enabled = True
+    global _affirmations_enabled
+    _affirmations_enabled = True
+
+
+def affirmations_enabled() -> bool:
+    """Return whether affirmations are enabled.
+
+    Returns
+    -------
+    affirmations_enabled: bool
+        Whether affirmations are enabled.
+    """
+    return _affirmations_enabled
 
 
 # Core functionality to add affirmations to error messages. This is done by
@@ -125,7 +136,7 @@ def affirming_excepthook(*args) -> None:
     sys.base_excepthook(*args)
 
     # End there are no affirmations, or affirmations are disabled
-    if (len(_affirmations) == 0) | (not affirmations_enabled):
+    if (len(_affirmations) == 0) | (not _affirmations_enabled):
         return
 
     # Otherwise, print a random affirmation
