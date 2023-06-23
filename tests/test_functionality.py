@@ -31,3 +31,9 @@ def test_adding_no_affirmations(exception):
 
     # Reset affirmations for other tests
     ea.reset_affirmations()
+
+# It is unclear to me how to test that affirmations are actually added to
+# error messages. Because the code modifies the excepthook, it has no
+# effect unless an error is not caught. However, if an error is not caught,
+# the test will fail. I am not sure how to get around this.
+# Any suggestions?
