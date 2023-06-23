@@ -7,7 +7,7 @@ Introduction
 
 :ErrorAffirmations: Affirmative error messages for Python
 :Author: Thomas Gessey-Jones
-:Version: 0.1.0-beta.8
+:Version: 0.1.0-beta.9
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
 
 .. image:: https://img.shields.io/badge/python-3.7+-blue.svg
@@ -16,6 +16,9 @@ Introduction
 .. image:: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/CI.yaml/badge.svg
    :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/actions/workflows/CI.yaml
    :alt: Testing Status
+.. image:: https://codecov.io/gh/ThomasGesseyJones/ErrorAffirmations/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/ThomasGesseyJones/ErrorAffirmations
+   :alt: Test Coverage Status
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
    :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE
    :alt: License information
