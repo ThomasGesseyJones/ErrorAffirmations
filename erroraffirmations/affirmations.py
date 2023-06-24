@@ -5,6 +5,7 @@ you feel better about your errors.
 """
 
 # Required libraries
+from typing import Iterable, Union
 import sys
 import random
 from pkg_resources import resource_stream
@@ -13,6 +14,7 @@ from pkg_resources import resource_stream
 # Parameters
 DEFAULT_FILE = resource_stream("erroraffirmations",
                                "data/affirmations.txt")
+AFFIRMATIONS = Union[str, Iterable[str]]
 
 # Set of affirmations to choose from, users can edit this set to add their
 # own or remove ones they don't like using the functions below. This set
@@ -20,26 +22,42 @@ DEFAULT_FILE = resource_stream("erroraffirmations",
 _affirmations = set()
 
 
-def add_affirmation(affirmation: str) -> None:
-    """Add an affirmation to the set of affirmations.
+def add_affirmations(affirmations: AFFIRMATIONS) -> None:
+    """Add affirmation(s) to the set of affirmations.
 
     Parameters
     ----------
-    affirmation: str
+    affirmations: str or iterable of str
         An encouraging message to help you feel better about your errors.
+        Or a collection of such messages.
     """
-    _affirmations.add(affirmation)
+    if isinstance(affirmations, str):
+        _affirmations.add(affirmations)
+        return
+    elif isinstance(affirmations, Iterable):
+        _affirmations.update(affirmations)
+        return
+    else:
+        raise TypeError("affirmations must be a string or iterable of strings")
 
 
-def remove_affirmation(affirmation: str) -> None:
-    """Remove an affirmation from the set of affirmations.
+def remove_affirmations(affirmations: AFFIRMATIONS) -> None:
+    """Remove affirmation(s) from the set of affirmations.
 
     Parameters
     ----------
-    affirmation: str
+    affirmations: str or iterable of str
         An encouraging message to help you feel better about your errors.
+        Or a collection of such messages.
     """
-    _affirmations.remove(affirmation)
+    if isinstance(affirmations, str):
+        _affirmations.remove(affirmations)
+        return
+    elif isinstance(affirmations, Iterable):
+        _affirmations.difference_update(affirmations)
+        return
+    else:
+        raise TypeError("affirmations must be a string or iterable of strings")
 
 
 def clear_affirmations() -> None:
@@ -62,7 +80,7 @@ def load_affirmations_from_file(file: str, append: bool = True) -> None:
             clear_affirmations()
 
         for line in f:
-            add_affirmation(line.strip())
+            add_affirmations(line.strip())
 
 
 def get_affirmations() -> set:
@@ -138,7 +156,7 @@ def affirming_excepthook(*args) -> None:
         Arguments passed to the standard sys excepthook
     """
     # Start with normal error message
-    sys.base_excepthook(*args)
+    sys.base_excepthook(*args)  # type: ignore
 
     # End there are no affirmations, or affirmations are disabled
     if (len(_affirmations) == 0) | (not _affirmations_enabled):
