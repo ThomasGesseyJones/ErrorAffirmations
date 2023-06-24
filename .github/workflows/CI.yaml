@@ -41,7 +41,7 @@ jobs:
           python -m pip install -e ".[all]"
 
       - name: Test with pytest
-        run: python -m pytest --cov=erroraffirmations tests
+        run: python -m pytest --cov=erroraffirmations --cov=examples tests
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1

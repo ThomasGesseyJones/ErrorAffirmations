@@ -1,0 +1,3 @@
+A test affirmation
+A second test affirmation
+A final test affirmation
