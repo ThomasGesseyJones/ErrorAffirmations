@@ -1,6 +1,6 @@
 """Example of how to use ErrorAffirmations to add your own affirmations."""
 
-from erroraffirmations import add_affirmation, get_affirmations, \
+from erroraffirmations import add_affirmations, get_affirmations, \
     clear_affirmations
 
 # Show part of the current list of affirmations
@@ -12,7 +12,7 @@ print("\n")
 clear_affirmations()
 
 # Add your own affirmations
-add_affirmation("You are doing great!")
+add_affirmations("You are doing great!")
 
 # Show new list of affirmations
 print(get_affirmations())

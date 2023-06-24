@@ -29,34 +29,77 @@ def test_get_random_affirmation():
     assert affirmation in ea.get_affirmations()
 
 
-@pytest.mark.parametrize("affirmation", ["Test affirmation", "Another test",
-                                         "A multi-line\naffirmation"])
-def test_add_affirmation(affirmation):
-    """Test that add_affirmation() adds an affirmation.
+@pytest.mark.parametrize("affirmations", ["Test affirmation",
+                                          "Another test",
+                                          "A multi-line\naffirmation",
+                                          ["A list of strings",
+                                           "A second string",
+                                           "A third string"]])
+def test_add_affirmations(affirmations):
+    """Test that add_affirmation() adds affirmation(s).
 
     Parameters
     ----------
-    affirmation : str
-        The affirmation to add.
+    affirmations : str or Iterable of str
+        The affirmation(s) to add.
     """
-    ea.add_affirmation(affirmation)
-    assert affirmation in ea.get_affirmations()
+    ea.add_affirmations(affirmations)
+    if isinstance(affirmations, str):
+        affirmations = [affirmations]
+    for affirmation in affirmations:
+        assert affirmation in ea.get_affirmations()
 
 
-@pytest.mark.parametrize("affirmation", ["Test affirmation", "Another test",
-                                         "A multi-line\naffirmation"])
-def test_remove_affirmation(affirmation):
-    """ Test that remove_affirmation() removes an affirmation.
+@pytest.mark.parametrize("invalid", [1, 1.0, True, None, object, dict])
+def test_add_invalid_affirmations(invalid):
+    """Test that add_affirmations() raises TypeError for invalid input.
 
     Parameters
     ----------
-    affirmation : str
-        The affirmation to remove.
+    invalid : object
+        An object that is not a string or iterable of strings."""
+    with pytest.raises(TypeError):
+        ea.add_affirmations(invalid)
+
+
+@pytest.mark.parametrize("affirmations", ["Test affirmation",
+                                          "Another test",
+                                          "A multi-line\naffirmation",
+                                          ["A list of strings",
+                                           "A second string",
+                                           "A third string"]])
+def test_remove_affirmations(affirmations):
+    """ Test that remove_affirmation() removes affirmation(s).
+
+    Parameters
+    ----------
+    affirmations : str or Iterable of str
+        The affirmation(s) to remove.
     """
-    ea.add_affirmation(affirmation)
-    assert affirmation in ea.get_affirmations()
-    ea.remove_affirmation(affirmation)
-    assert affirmation not in ea.get_affirmations()
+    input_affirmations = affirmations
+
+    ea.add_affirmations(input_affirmations)
+    if isinstance(affirmations, str):
+        affirmations = [affirmations]
+    for affirmation in affirmations:
+        assert affirmation in ea.get_affirmations()
+
+    ea.remove_affirmations(input_affirmations)
+    for affirmation in affirmations:
+        assert affirmation not in ea.get_affirmations()
+
+
+@pytest.mark.parametrize("invalid", [1, 1.0, True, None, object, dict])
+def test_remove_invalid_affirmations(invalid):
+    """Test that remove_affirmations() raises TypeError for invalid input.
+
+    Parameters
+    ----------
+    invalid : object
+        An object that is not a string or iterable of strings.
+    """
+    with pytest.raises(TypeError):
+        ea.remove_affirmations(invalid)
 
 
 def test_clear_affirmations():
