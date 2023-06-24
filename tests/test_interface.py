@@ -50,6 +50,18 @@ def test_add_affirmations(affirmations):
         assert affirmation in ea.get_affirmations()
 
 
+@pytest.mark.parametrize("invalid", [1, 1.0, True, None, object, dict])
+def test_add_invalid_affirmations(invalid):
+    """Test that add_affirmations() raises TypeError for invalid input.
+
+    Parameters
+    ----------
+    invalid : object
+        An object that is not a string or iterable of strings."""
+    with pytest.raises(TypeError):
+        ea.add_affirmations(invalid)
+
+
 @pytest.mark.parametrize("affirmations", ["Test affirmation",
                                           "Another test",
                                           "A multi-line\naffirmation",
@@ -75,6 +87,19 @@ def test_remove_affirmations(affirmations):
     ea.remove_affirmations(input_affirmations)
     for affirmation in affirmations:
         assert affirmation not in ea.get_affirmations()
+
+
+@pytest.mark.parametrize("invalid", [1, 1.0, True, None, object, dict])
+def test_remove_invalid_affirmations(invalid):
+    """Test that remove_affirmations() raises TypeError for invalid input.
+
+    Parameters
+    ----------
+    invalid : object
+        An object that is not a string or iterable of strings.
+    """
+    with pytest.raises(TypeError):
+        ea.remove_affirmations(invalid)
 
 
 def test_clear_affirmations():
