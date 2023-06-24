@@ -59,7 +59,7 @@ def test_add_invalid_affirmations(invalid):
     invalid : object
         An object that is not a string or iterable of strings."""
     with pytest.raises(TypeError):
-        ea.add_affirmations(invalid)
+        ea.add_affirmations(invalid)  # type: ignore
 
 
 @pytest.mark.parametrize("affirmations", ["Test affirmation",
@@ -99,7 +99,7 @@ def test_remove_invalid_affirmations(invalid):
         An object that is not a string or iterable of strings.
     """
     with pytest.raises(TypeError):
-        ea.remove_affirmations(invalid)
+        ea.remove_affirmations(invalid)  # type: ignore
 
 
 def test_clear_affirmations():
