@@ -1,0 +1,3 @@
+Example affirmation 1
+Example affirmation 2
+Example affirmation 3

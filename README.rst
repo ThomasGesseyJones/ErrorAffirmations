@@ -7,8 +7,9 @@ Introduction
 
 :ErrorAffirmations: Affirmative error messages for Python
 :Author: Thomas Gessey-Jones
-:Version: 0.1.0-rc.1
+:Version: 0.1.0-rc.2
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
+:Documentation: https://erroraffirmations.readthedocs.io
 
 .. image:: https://img.shields.io/badge/python-3.7+-blue.svg
    :target: https://www.python.org/downloads/
@@ -26,9 +27,61 @@ Introduction
    :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE
    :alt: License information
 
+``ErrorAffirmations`` is a Python package that appends affirmations to
+to help you feel better about your errors.
 
-``ErrorAffirmations`` is a Python library that provides affirmative error messages, to help you feel better about your
-errors.
+Quickstart
+----------
+
+First install ``ErrorAffirmations``:
+
+.. code:: bash
+
+   pip install erroraffirmations
+
+Then import the ``erroraffirmations`` module:
+
+.. code:: python
+
+   import erroraffirmations
+
+and your ready to go! All errors will now be appended with an affirmation.
+
+
+Features
+--------
+
+Currently, ``ErrorAffirmations`` has the following features:
+
+- Appends affirmations to all errors
+- Allows you to add your own affirmations and remove existing affirmations
+- Allows you to enable/disable the adding of affirmations
+- Utilities to load affirmations from a file
+- A set of default affirmations to keep you motivated
+
+
+Requirements
+------------
+
+``ErrorAffirmations`` requires Python 3.7 or higher. It has no
+required dependencies.
+
+For documentation generation you will need:
+
+- Sphinx
+- sphinx-rtd-theme
+- numpydoc
+
+Testing requires:
+
+- pytest
+- pytest-cov
+- flake8
+- pydocstyle
+- pre-commit
+- packaging
+
+
 
 Installation
 ------------
@@ -76,61 +129,39 @@ Simply import the ``erroraffirmations`` module and all errors will be appended w
     Remember, every error you encounter is an opportunity for growth and learning. You're capable of overcoming this challenge!
 
 
-You can also access the affirmations list directly, to add your own affirmations:
-
-.. code:: python
-
-    from erroraffirmations import add_affirmation, get_affirmations, \
-    clear_affirmations
-
-    # Show part of the current list of affirmations
-    for affirmation in list(get_affirmations())[:5]:
-        print(affirmation)
-    print("\n")
-
-    # Remove all existing affirmations
-    clear_affirmations()
-
-    # Add your own affirmations
-    add_affirmation("You are doing great!")
-
-    # Show new list of affirmations
-    print(get_affirmations())
-    print("\n")
-
-    # Let us see it in action
-    raise ValueError("1 + 1 is not equal to 3")
+Code snippets demonstrating the advanced usage of ``ErrorAffirmations`` can be
+found in the `examples <https://github.com/ThomasGesseyJones/ErrorAffirmations/tree/main/examples>`__ directory.
 
 
-.. code::
+Documentation
+-------------
 
-    The best programmers encounter errors regularly. It's a sign that you're exploring new territory and pushing your limits.
-    Mistakes are an essential part of the learning process. You're getting closer to the solution with each error you encounter.
-    The fact that you're facing this challenge head-on shows your determination and dedication. You've got this!
-    Take a moment to step back, breathe, and approach the problem from a different angle. A fresh perspective can lead to breakthroughs.
-    Remember, every error you encounter is an opportunity for growth and learning. You're capable of overcoming this challenge!
+The documentation for ``ErrorAffirmations`` can be found at
+`erroraffirmations.readthedocs.io <https://erroraffirmations.readthedocs.io/en/latest/>`__.
 
+To build the documentation locally, you will need to install the
+documentation dependencies:
 
-    {'You are doing great!'}
+.. code:: bash
 
+   python -m pip install ".[docs]"
 
-    Traceback (most recent call last):
-      File "/home/thomas/Documents/Pet_Projects/ErrorAffirmations/examples/editing_affirmations.py", line 22, in <module>
-        raise ValueError("1 + 1 is not equal to 3")
-    ValueError: 1 + 1 is not equal to 3
+Then you can build the documentation:
 
-    You are doing great!
+.. code:: bash
 
-    Process finished with exit code 1
+   cd docs
+   make html
 
-
-Code snippets demonstrating the usage of ``ErrorAffirmations`` can be found in the ``examples`` directory.
-
+The documentation will be built in the ``docs/build`` directory.
+Open ``docs/build/html/index.html`` in your browser to view the documentation.
 
 License
 -------
 
-``ErrorAffirmations`` is licensed under the MIT license. See the ``LICENSE`` file for more details.
+``ErrorAffirmations`` is licensed under the MIT license. See the
+`LICENSE <https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE>`__
+file for more details.
 
 
 Contributing
@@ -139,4 +170,9 @@ Contributing
 Contributions are always welcome and greatly appreciated.
 
 - You can `open an issue <https://github.com/ThomasGesseyJones/ErrorAffirmations/issues>`__ to report bugs or to propose new features.
-- Or fork the repository, make your changes, and submit a pull request
+- Or fork the `repository <https://github.com/ThomasGesseyJones/ErrorAffirmations>`__, make your changes, and submit a `pull request <https://github.com/ThomasGesseyJones/ErrorAffirmations/pulls>`__.
+
+If it is your
+first time contributing to ``ErrorAffirmations``, please read the
+`contributing guidelines <https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/.github/CONTRIBUTING.md>`__
+before making a pull request.

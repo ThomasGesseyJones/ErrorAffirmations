@@ -12,4 +12,5 @@ Fixes # (issue)
 - [ ] My code contains compliant docstrings (`pydocstyle --convention=numpy erroraffirmations bin examples tests`)
 - [ ] New and existing unit tests pass locally with my changes (`python -m pytest`)
 - [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] I have added necessary documentation (if appropriate)
 - [ ] I have appropriately incremented the [semantic version number](https://semver.org/) in both `README.rst` and `erroraffirmations/_version.py`
