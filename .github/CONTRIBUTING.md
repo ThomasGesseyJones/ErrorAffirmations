@@ -18,7 +18,7 @@ merged if everything looks good. If you have any questions, feel free to ask!
 
 ErrorAffirmations uses flakes8 and pydocstyle to ensure that all code is
 formatted correctly and of a consistent style. To avoid linting errors, you may
-want to install the pre-commit hook. This will run the linters on your code
+want to install a pre-commit hook. This will run the linters on your code
 before you commit it and will prevent you from committing code that does not
 pass the linters. To install the pre-commit hook, run the following commands:
 
