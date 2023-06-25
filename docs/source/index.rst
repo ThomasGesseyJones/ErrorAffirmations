@@ -3,9 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+Welcome to ErrorAffirmations' documentation!
+============================================
+
 .. toctree::
-   :maxdepth: 1
-   :caption: Contents
+   :maxdepth: 3
+   :caption: Contents:
 
    Introduction <intro>
+   Examples <examples>
+   Default Affirmations <default>
+   API Reference <api>
 
