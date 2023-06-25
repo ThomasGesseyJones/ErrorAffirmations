@@ -30,6 +30,7 @@ classifiers = [
 [project.optional-dependencies]
 test = ["packaging", "flake8", "pydocstyle", "pytest", "pytest-cov",
     "pre-commit"]
+docs = ["sphinx", "sphinx_rtd_theme", "numpydoc"]
 
 [tool.setuptools.dynamic]
 version = {attr = "erroraffirmations._version.__version__"}
