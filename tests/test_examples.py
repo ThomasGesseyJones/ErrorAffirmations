@@ -6,10 +6,10 @@ sys.path.append(str(Path(__file__).parent.parent.joinpath('examples')))
 
 
 # Run each example script
-def test_basic_usage_example():
-    """Test that basic_usage.py runs with expected Exception."""
+def test_quick_start_example():
+    """Test that quick_start.py runs with expected Exception."""
     try:
-        import basic_usage  # noqa: F401
+        import quick_start  # noqa: F401
     except Exception as e:
         assert isinstance(e, Exception)
         assert str(e) == 'Something went wrong'
