@@ -160,7 +160,7 @@ License
 -------
 
 ``ErrorAffirmations`` is licensed under the MIT license. See the
-[LICENSE](https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE)
+`LICENSE <https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE>`__
 file for more details.
 
 
