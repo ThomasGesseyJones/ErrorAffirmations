@@ -7,7 +7,7 @@ Introduction
 
 :ErrorAffirmations: Affirmative error messages for Python
 :Author: Thomas Gessey-Jones
-:Version: 0.1.0-rc.2
+:Version: 0.1.0
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
 :Documentation: https://erroraffirmations.readthedocs.io
 
