@@ -30,13 +30,27 @@ errors.
 Installation
 ------------
 
-Currently, the only way to install ``ErrorAffirmations`` is to clone the repository and install it manually:
+``ErrorAffirmations`` can be  directly installed via pip:
+
+.. code:: bash
+
+   pip install erroraffirmations 
+
+or from the repository:
 
 .. code:: bash
 
   git clone git@github.com:ThomasGesseyJones/ErrorAffirmations.git
   cd ErrorAffirmations
-  pip install .
+  python -m pip install .
+
+A new installation can be verified as working by running the tests suite:
+
+.. code:: bash
+
+   python -m pip install ".[test]"
+   python -m pytest
+
 
 Usage
 -----
