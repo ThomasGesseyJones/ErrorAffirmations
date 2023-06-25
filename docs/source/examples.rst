@@ -152,7 +152,7 @@ Enable/Disable Affirmations
 
 You can enable or disable affirmations through the
 ``enable_affirmations`` and ``disable_affirmations`` functions.
-To check if affirmations call the ``affirmations_enabled`` function.
+To check if affirmations are on call the ``affirmations_enabled`` function.
 By default affirmations are enabled.
 
 Here's an example of how to do that:
