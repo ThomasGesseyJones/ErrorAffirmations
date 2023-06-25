@@ -18,7 +18,7 @@ merged if everything looks good. If you have any questions, feel free to ask!
 
 ErrorAffirmations uses flakes8 and pydocstyle to ensure that all code is
 formatted correctly and of a consistent style. To avoid linting errors, you may
-want to install the pre-commit hook. This will run the linters on your code
+want to install a pre-commit hook. This will run the linters on your code
 before you commit it and will prevent you from committing code that does not
 pass the linters. To install the pre-commit hook, run the following commands:
 
@@ -81,19 +81,20 @@ the following rules:
 ## Documentation
 
 ErrorAffirmations uses [Sphinx](https://www.sphinx-doc.org/en/master/) for
-documentation. To build the documentation, first install Sphinx and the
+documentation, hosted on [readthedocs](https://readthedocs.org/).
+To build the documentation locally, first install Sphinx and the
 documentation dependencies:
 
-.. code:: bash
-
+```bash
    python -m pip install ".[docs]"
+```
 
 Then you can build the documentation:
 
-.. code:: bash
-
+```bash
    cd docs
    make html
+```
 
 The documentation will be built in the `docs/build` directory. You can view it
 by opening `docs/build/html/index.html` in your web browser.
@@ -102,7 +103,7 @@ If you are adding a new feature, please add documentation for it. In particular,
 please ensure any new API functions are documented in the appropriate place in
 `docs/source/api.rst`. If your change is substantial, you may want to add a new 
 example to the documentation
-and `examples` to illustrate how to use the new feature. 
+and the `examples` folder to illustrate how to use the new feature. 
 
 
 
