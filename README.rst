@@ -19,6 +19,9 @@ Introduction
 .. image:: https://codecov.io/gh/ThomasGesseyJones/ErrorAffirmations/branch/main/graph/badge.svg
    :target: https://codecov.io/gh/ThomasGesseyJones/ErrorAffirmations
    :alt: Test Coverage Status
+.. image:: https://readthedocs.org/projects/erroraffirmations/badge/?version=latest
+   :target: https://erroraffirmations.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
    :target: https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE
    :alt: License information
