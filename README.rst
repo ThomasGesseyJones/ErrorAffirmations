@@ -7,7 +7,7 @@ Introduction
 
 :ErrorAffirmations: Affirmative error messages for Python
 :Author: Thomas Gessey-Jones
-:Version: 0.1.0-beta.14
+:Version: 0.1.0-rc.1
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
 
 .. image:: https://img.shields.io/badge/python-3.7+-blue.svg
@@ -30,13 +30,27 @@ errors.
 Installation
 ------------
 
-Currently, the only way to install ``ErrorAffirmations`` is to clone the repository and install it manually:
+``ErrorAffirmations`` can be  directly installed via pip:
+
+.. code:: bash
+
+   pip install erroraffirmations 
+
+or from the repository:
 
 .. code:: bash
 
   git clone git@github.com:ThomasGesseyJones/ErrorAffirmations.git
   cd ErrorAffirmations
-  pip install .
+  python -m pip install .
+
+A new installation can be verified as working by running the tests suite:
+
+.. code:: bash
+
+   python -m pip install ".[test]"
+   python -m pytest
+
 
 Usage
 -----
