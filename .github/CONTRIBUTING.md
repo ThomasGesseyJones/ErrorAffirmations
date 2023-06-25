@@ -19,7 +19,7 @@ merged if everything looks good. If you have any questions, feel free to ask!
 ErrorAffirmations uses flakes8 and pydocstyle to ensure that all code is
 formatted correctly and of a consistent style. To avoid linting errors, you may
 want to install the pre-commit hook. This will run the linters on your code
-before you commit it, and will prevent you from committing code that does not
+before you commit it and will prevent you from committing code that does not
 pass the linters. To install the pre-commit hook, run the following commands:
 
 ```bash
@@ -42,7 +42,7 @@ pydocstyle --convention=numpy erroraffirmations bin examples tests
 
 ## Testing
 
-ErrorAffirmations uses pytest for testing. First make sure that pytest is
+ErrorAffirmations uses pytest for testing. First, make sure that pytest is
 installed:
 
 ```bash
@@ -57,7 +57,8 @@ python -m pytest
 
 All tests should pass before you submit a pull request. 
 New features and bug fixes should be accompanied by tests. If you are
-unsure how to test your code, please ask! If your contribution reduces the
+unsure how to test your code, the issue or pull request comment thread 
+is a good place to ask for help. If your contribution reduces the
 coverage of the test suite, it will fail testing and will not be merged.
 
 
@@ -70,13 +71,11 @@ in both of these files. The version number should be incremented according to
 the following rules:
 
 * If the new contribution is a bug fix, increment the patch version number.
-* If the new contribution adds a new feature without breaking backwards
+* If the new contribution adds a new feature without breaking backward
   compatibility, increment the minor version number.
-* If the new contribution breaks backwards compatibility, increment the major
+* If the new contribution breaks backward compatibility, increment the major
   version number.
 * Pre-release versions should be suffixed with a hyphen and a pre-release identifier. 
-
-If in doubt, please ask!
 
 
 
