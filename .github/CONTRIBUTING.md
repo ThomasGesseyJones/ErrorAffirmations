@@ -81,7 +81,8 @@ the following rules:
 ## Documentation
 
 ErrorAffirmations uses [Sphinx](https://www.sphinx-doc.org/en/master/) for
-documentation. To build the documentation, first install Sphinx and the
+documentation, hosted on [readthedocs](https://readthedocs.org/).
+To build the documentation locally, first install Sphinx and the
 documentation dependencies:
 
 ```bash
@@ -102,7 +103,7 @@ If you are adding a new feature, please add documentation for it. In particular,
 please ensure any new API functions are documented in the appropriate place in
 `docs/source/api.rst`. If your change is substantial, you may want to add a new 
 example to the documentation
-and `examples` to illustrate how to use the new feature. 
+and the `examples` folder to illustrate how to use the new feature. 
 
 
 
