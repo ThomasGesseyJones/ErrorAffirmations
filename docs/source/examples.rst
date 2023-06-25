@@ -43,10 +43,61 @@ example for more details.
 Affirmations are only appended to the error message if the error message is
 not caught. If you catch the error, the affirmation will not be appended.
 
+The above example is also available as a script in the ``examples`` folder
+called ``quick_start.py``.
 
 Add/Remove Affirmations
 -----------------------
 
+You can add your own affirmations to the list of affirmations that come with
+the package. You can also remove affirmations from the list. Here's an example
+of how to do that:
+
+.. code:: python
+
+    from erroraffirmations import add_affirmations, remove_affirmations, \
+        get_affirmations, clear_affirmations
+
+    # Let us start by clearing the affirmations
+    clear_affirmations()
+
+    # Add some affirmations
+    add_affirmations(["You are doing great!", "An affirmation we don't like"])
+
+    # Show the current set of affirmations
+    print(get_affirmations())
+    print("\n")
+
+    # Remove an affirmation
+    remove_affirmations("An affirmation we don't like")
+
+    # Show the current set of affirmations
+    print(get_affirmations())
+
+    # And finally show the affirmations in action
+    raise ValueError("1 + 1 is not equal to 3")
+
+The output of the above code is:
+
+.. code:: text
+
+    {"An affirmation we don't like", 'You are doing great!'}
+
+
+    {'You are doing great!'}
+    Traceback (most recent call last):
+      File "../examples/editing_affirmations.py", line 23, in <module>
+        raise ValueError("1 + 1 is not equal to 3")
+    ValueError: 1 + 1 is not equal to 3
+
+    You are doing great!
+
+Note one or multiple affirmations can be added or removed at once. This
+example also serves to illustrate the ``clear_affirmations`` and
+``get_affirmations`` functions.
+
+The above example is also available as a script in the ``examples`` folder
+called ``editing_affirmations.py``.
 
 
 Affirmations From File

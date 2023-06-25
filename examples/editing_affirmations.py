@@ -1,22 +1,23 @@
 """Example of how to use ErrorAffirmations to add your own affirmations."""
 
-from erroraffirmations import add_affirmations, get_affirmations, \
-    clear_affirmations
+from erroraffirmations import add_affirmations, remove_affirmations, \
+    get_affirmations, clear_affirmations
 
-# Show part of the current list of affirmations
-for affirmation in list(get_affirmations())[:5]:
-    print(affirmation)
-print("\n")
-
-# Remove all existing affirmations
+# Let us start by clearing the affirmations
 clear_affirmations()
 
-# Add your own affirmations
-add_affirmations("You are doing great!")
+# Add some affirmations
+add_affirmations(["You are doing great!", "An affirmation we don't like"])
 
-# Show new list of affirmations
+# Show the current set of affirmations
 print(get_affirmations())
 print("\n")
 
-# Let us see it in action
+# Remove an affirmation
+remove_affirmations("An affirmation we don't like")
+
+# Show the current set of affirmations
+print(get_affirmations())
+
+# And finally show the affirmations in action
 raise ValueError("1 + 1 is not equal to 3")
