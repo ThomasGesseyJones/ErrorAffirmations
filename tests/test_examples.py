@@ -32,6 +32,15 @@ def test_loading_affirmations_example():
         assert isinstance(e, ZeroDivisionError)
 
 
+def test_disabling_affirmations_example():
+    """Test that disabling_affirmations.py runs with expected Exception."""
+    try:
+        import disabling_affirmations  # noqa: F401
+    except ValueError as e:
+        assert isinstance(e, TypeError)
+        assert str(e) == "Boring regular error message"
+
+
 def test_empty_affirmations_examples():
     """Test that empty_affirmations.py runs with expected Exception."""
     try:
