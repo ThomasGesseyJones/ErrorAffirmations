@@ -159,7 +159,9 @@ Open ``docs/build/html/index.html`` in your browser to view the documentation.
 License
 -------
 
-``ErrorAffirmations`` is licensed under the MIT license. See the ``LICENSE`` file for more details.
+``ErrorAffirmations`` is licensed under the MIT license. See the
+[LICENSE](https://github.com/ThomasGesseyJones/ErrorAffirmations/blob/main/LICENSE)
+file for more details.
 
 
 Contributing
