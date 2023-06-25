@@ -10,7 +10,6 @@ Introduction
 :Version: 0.1.0-rc.2
 :Homepage: https://github.com/ThomasGesseyJones/ErrorAffirmations
 :Documentation: https://erroraffirmations.readthedocs.io/en/latest/
-:License: MIT
 
 .. image:: https://img.shields.io/badge/python-3.7+-blue.svg
    :target: https://www.python.org/downloads/
