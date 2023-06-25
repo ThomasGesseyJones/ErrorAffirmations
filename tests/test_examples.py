@@ -1,6 +1,7 @@
 """Test the example scripts."""
 
 import sys
+from erroraffirmations import enable_affirmations
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent.joinpath('examples')))
 
@@ -36,9 +37,12 @@ def test_disabling_affirmations_example():
     """Test that disabling_affirmations.py runs with expected Exception."""
     try:
         import disabling_affirmations  # noqa: F401
-    except ValueError as e:
+    except TypeError as e:
         assert isinstance(e, TypeError)
         assert str(e) == "Boring regular error message"
+
+    # Renable affirmations for other tests
+    enable_affirmations()
 
 
 def test_empty_affirmations_examples():
