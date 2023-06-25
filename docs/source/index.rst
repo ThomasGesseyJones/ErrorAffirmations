@@ -11,7 +11,7 @@ Welcome to ErrorAffirmations' documentation!
    :caption: Contents:
 
    Introduction <intro>
-   Examples <examples>
+   Tutorial and Examples <examples>
    Default Affirmations <default>
    API Reference <api>
 

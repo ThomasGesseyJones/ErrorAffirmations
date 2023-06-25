@@ -1,6 +1,6 @@
-========
-Examples
-========
+=====================
+Tutorial and Examples
+=====================
 
 Here are some examples of how to use ``ErrorAffirmations`` and its various
 features:
