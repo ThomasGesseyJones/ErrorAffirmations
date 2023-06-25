@@ -146,3 +146,68 @@ called ``loading_affirmations.py``.
 
 Enable/Disable Affirmations
 ---------------------------
+
+You can enable or disable affirmations through the
+``enable_affirmations`` and ``disable_affirmations`` functions.
+To check if affirmations call the ``affirmations_enabled`` function.
+By default affirmations are enabled.
+
+Here's an example of how to do that:
+
+.. code:: python
+
+    from erroraffirmations import disable_affirmations, affirmations_enabled
+
+    # Defaults to on
+    print(affirmations_enabled())
+
+    # Turn off affirmations
+    disable_affirmations()
+
+    # Now affirmations are off
+    print(affirmations_enabled())
+
+    # And finally show that affirmations are not displayed
+    raise TypeError("Boring regular error message")
+
+
+The output of the above code is:
+
+.. code:: text
+
+    True
+    False
+    Traceback (most recent call last):
+      File "../examples/disabling_affirmations.py", line 15, in <module>
+        raise TypeError("Boring regular error message")
+    TypeError: Boring regular error message
+
+The above example is also available as a script in the ``examples`` folder
+called ``disabling_affirmations.py``.
+
+Affirmations are also disabled if there are no affirmations to display. E.g.
+if you run the following code:
+
+.. code:: python
+
+    from erroraffirmations import clear_affirmations
+
+    # Remove all existing affirmations
+    clear_affirmations()
+
+    # No affirmation is displayed
+    raise ValueError("A normal error message")
+
+
+The output of the above code is:
+
+.. code:: text
+
+    Traceback (most recent call last):
+      File "../examples/empty_affirmations.py", line 9, in <module>
+        raise ValueError("A normal error message")
+    ValueError: A normal error message
+
+As with all the other examples, this example is also available as a script in
+the ``examples`` folder called ``empty_affirmations.py``.
+
