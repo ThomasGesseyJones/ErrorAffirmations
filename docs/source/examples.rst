@@ -96,6 +96,9 @@ Note one or multiple affirmations can be added or removed at once. This
 example also serves to illustrate the ``clear_affirmations`` and
 ``get_affirmations`` functions.
 
+If you ever want to revert to the default affirmations, you can do so by
+calling the ``reset_affirmations`` function.
+
 The above example is also available as a script in the ``examples`` folder
 called ``editing_affirmations.py``.
 
