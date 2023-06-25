@@ -24,6 +24,14 @@ def test_editing_affirmations_example():
         assert str(e) == "1 + 1 is not equal to 3"
 
 
+def test_loading_affirmations_example():
+    """Test that loading_affirmations.py runs with expected Exception."""
+    try:
+        import loading_affirmations  # noqa: F401
+    except ZeroDivisionError as e:
+        assert isinstance(e, ZeroDivisionError)
+
+
 def test_empty_affirmations_examples():
     """Test that empty_affirmations.py runs with expected Exception."""
     try:

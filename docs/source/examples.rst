@@ -103,6 +103,45 @@ called ``editing_affirmations.py``.
 Affirmations From File
 ----------------------
 
+You can also load affirmations from a file. The file should be a text file
+with one affirmation per line. Such a text file ``my_affirmations.txt`` is
+included in the ``examples`` folder. With three affirmations:
+
+.. code:: text
+
+    Example affirmation 1
+    Example affirmation 2
+    Example affirmation 3
+
+Here's an example of how to do load it, overriding the existing affirmations,
+
+.. code:: python
+
+    from erroraffirmations import load_affirmations_from_file
+
+    # Add affirmations from a file
+    load_affirmations_from_file("my_affirmations.txt", append=False)
+
+    _ = 1/0
+
+The output of the above code is:
+
+.. code:: text
+
+    Traceback (most recent call last):
+      File "loading_affirmations.py", line 8, in <module>
+        _ = 1/0
+    ZeroDivisionError: division by zero
+
+    Example affirmation 3
+
+Rather than overriding the existing affirmations, you can also append the
+affirmations from the file to the existing affirmations. To do that, just
+change ``append=False`` to ``append=True`` in the above example. Appending
+affirmations is the default behavior.
+
+The above example is also available as a script in the ``examples`` folder
+called ``loading_affirmations.py``.
 
 
 Enable/Disable Affirmations
