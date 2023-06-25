@@ -78,6 +78,33 @@ the following rules:
 * Pre-release versions should be suffixed with a hyphen and a pre-release identifier. 
 
 
+## Documentation
+
+ErrorAffirmations uses [Sphinx](https://www.sphinx-doc.org/en/master/) for
+documentation. To build the documentation, first install Sphinx and the
+documentation dependencies:
+
+.. code:: bash
+
+   python -m pip install ".[docs]"
+
+Then you can build the documentation:
+
+.. code:: bash
+
+   cd docs
+   make html
+
+The documentation will be built in the `docs/build` directory. You can view it
+by opening `docs/build/html/index.html` in your web browser.
+
+If you are adding a new feature, please add documentation for it. In particular,
+please ensure any new API functions are documented in the appropriate place in
+`docs/source/api.rst`. If your change is substantial, you may want to add a new 
+example to the documentation
+and `examples` to illustrate how to use the new feature. 
+
+
 
 ## License
 
