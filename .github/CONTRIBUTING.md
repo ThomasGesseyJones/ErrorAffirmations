@@ -84,16 +84,16 @@ ErrorAffirmations uses [Sphinx](https://www.sphinx-doc.org/en/master/) for
 documentation. To build the documentation, first install Sphinx and the
 documentation dependencies:
 
-.. code:: bash
-
+```bash
    python -m pip install ".[docs]"
+```
 
 Then you can build the documentation:
 
-.. code:: bash
-
+```bash
    cd docs
    make html
+```
 
 The documentation will be built in the `docs/build` directory. You can view it
 by opening `docs/build/html/index.html` in your web browser.
